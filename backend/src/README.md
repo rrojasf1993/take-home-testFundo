@@ -1,26 +1,32 @@
-## Running the Backend
+# Loan Management API
+### A backend API for managing loans, built with ASP.NET Core 9, Entity Framework Core, and Docker.
 
-To build the backend, navigate to the `src` folder and run:  
-```sh
-dotnet build
-```
+## Tech Stack
+* ASP.NET Core 9
+* Entity Framework Core
+* FluentValidation
+* xUnit + Coverlet
+* Docker + Docker Compose
 
-To run all tests:  
-```sh
-dotnet test
-```
+## Run unit tests
+`dotnet test --collect:"XPlat Code Coverage"`
 
-To start the main API:  
-```sh
-cd Fundo.Applications.WebApi  
-dotnet run
-```
+## To generate a coverage report (optional):
+* `dotnet tool install -g dotnet-reportgenerator-globaltool`
 
-The following endpoint should return **200 OK**:  
-```http
-GET -> https://localhost:5001/loan
-```
+* `reportgenerator -reports:**/coverage.cobertura.xml -targetdir:coverage-report -reporttypes:Html`
 
-## Notes  
+## Running the Backend with Docker
+Make sure Docker is installed and running.
+From the root of the repository, run:
 
-Feel free to modify the code as needed, but try to **respect and extend the current architecture**, as this is intended to be a replica of the Fundo codebase.
+`docker-compose up --build`
+
+# This will:
+
+* Build and start the API on port 5001
+* Start a SQL Server container on port 1433
+
+# API Endpoint
+Once running, you can test the API with:
+`https://localhost:59731/swagger/index.html`

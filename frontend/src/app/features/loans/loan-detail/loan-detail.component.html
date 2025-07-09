@@ -1,0 +1,30 @@
+<mat-card *ngIf="currentLoan">
+    <mat-card-content>
+        <h2>Loan detail</h2>
+        <p><strong>Requester:</strong> {{ currentLoan.applicantName }}</p>
+        <p><strong>Amount:</strong> {{ currentLoan.amount }}$</p>
+        <p><strong>Current Balance:</strong> {{ currentLoan.currentBalance }} $</p>
+        <p><strong>Status:</strong> {{ currentLoan.status }}</p>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+    </mat-card-content>
+    <mat-card-footer>
+        <form (ngSubmit)="payLoanInstatement()" class="payment-form" [formGroup]="paymentForm">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Payment amount</mat-label>
+                <input matInput type="number" formControlName="amount" />
+                <mat-error *ngIf="paymentForm.get('amount')?.hasError('required')">
+                    The amount is mandatory
+                </mat-error>
+                <mat-error *ngIf="paymentForm.get('amount')?.hasError('min')">
+                    The amount must be greater than zero
+                </mat-error>
+            </mat-form-field>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" type="submit" [disabled]="paymentForm.invalid || loading">
+                    Pay
+                </button>
+            </mat-card-actions>
+        </form>
+    </mat-card-footer>
+
+</mat-card>
