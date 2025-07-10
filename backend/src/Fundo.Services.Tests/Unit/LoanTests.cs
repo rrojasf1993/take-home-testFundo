@@ -29,6 +29,7 @@ namespace Fundo.Services.Tests.Unit
         [Fact]
         public void MakePayment_ShouldThrow_WhenAmountIsNegative()
         {
+            //a  comment
             var loan = new Loan { CurrentBalance = 200, Status = LoanStatus.Active };
 
             var ex = Assert.Throws<InvalidOperationException>(() => loan.MakePayment(-10));
