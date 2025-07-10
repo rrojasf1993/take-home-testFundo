@@ -23,7 +23,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\Loans.WebApi\Loans.Domain\Loans.Domain.csproj" />
 		<ProjectReference Include="..\Fundo.Applications.WebApi\Fundo.Applications.WebApi.csproj" />
 	</ItemGroup>
 

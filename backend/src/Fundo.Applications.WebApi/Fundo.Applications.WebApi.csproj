@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Loans.WebApi\Loans.BackendInfrastructure\Loans.BackendInfrastructure.csproj" />
-    <ProjectReference Include="..\..\..\..\Loans.WebApi\Loans.Cross\Loans.Cross.csproj" />
+    <ProjectReference Include="..\Loans.BackendInfrastructure\Loans.BackendInfrastructure.csproj" />
   </ItemGroup>
 
 </Project>
