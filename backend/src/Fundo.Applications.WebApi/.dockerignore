@@ -1,0 +1,12 @@
+**/.git
+**/.gitignore
+**/bin
+**/obj
+**/TestResults
+**/coverage*
+**/coverage-report
+.vscode
+.idea
+Dockerfile
+README.md
+*.md
